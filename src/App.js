@@ -16,6 +16,7 @@ import {
     createNote as createNoteMutation,
     deleteNote as deleteNoteMutation,
 } from "./graphql/mutations";
+import helmet from "helmet";
 
 const frameguard = require("frameguard");
 
@@ -114,6 +115,10 @@ const App = ({ signOut }) => {
     );
 };
 
-App.use(frameguard({ action: "sameorigin" }));
+App.use(
+    helmet({
+        xFrameOptions: { action: "sameorigin" },
+    })
+);
 
 export default withAuthenticator(App);

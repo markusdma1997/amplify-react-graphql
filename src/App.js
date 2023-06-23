@@ -17,6 +17,8 @@ import {
     deleteNote as deleteNoteMutation,
 } from "./graphql/mutations";
 
+const frameguard = require("frameguard");
+
 const App = ({ signOut }) => {
     const [notes, setNotes] = useState([]);
 
@@ -111,5 +113,7 @@ const App = ({ signOut }) => {
         </View>
     );
 };
+
+App.use(frameguard({ action: "sameorigin" }));
 
 export default withAuthenticator(App);

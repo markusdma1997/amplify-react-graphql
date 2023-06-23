@@ -99,12 +99,14 @@ const App = ({ signOut }) => {
                     </Flex>
                 ))}
             </View>
-            <iframe
-                src="http://localhost:3000/dashboard-solo/new?orgId=1&from=1687505609678&to=1687505909679&refresh=5s&panelId=1"
-                width="450"
-                height="200"
-                frameBorder="0">
-            </iframe>
+            <View>
+                <iframe
+                    src="http://127.0.0.1:3000/dashboard-solo/new?orgId=1&from=1687505609678&to=1687505909679&refresh=5s&panelId=1"
+                    width="450"
+                    height="200"
+                    frameBorder="0">
+                </iframe>
+            </View>
             <Button onClick={signOut}>Sign Out</Button>
         </View>
     );
